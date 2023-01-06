@@ -31,10 +31,15 @@ class ViewController: UIViewController {
         signupButton.clipsToBounds = true
         signupButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 23)
        
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+
         
     }
-    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
     private func getGradientLayer(bounds : CGRect) -> CAGradientLayer{
     let gradient = CAGradientLayer()
     gradient.frame = bounds

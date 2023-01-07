@@ -10,7 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var secondTitle: UILabel!
-    
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var mailField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     
@@ -18,6 +19,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         
+        mailField.layer.cornerRadius = 6
+        passwordField.layer.cornerRadius = 6
         
         secondTitle.textColor = gradientColor(bounds: secondTitle.bounds, gradientLayer: getGradientLayer(bounds: secondTitle.bounds))
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43450A2C2968EDE700CF8D2D /* registerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43450A2B2968EDE700CF8D2D /* registerVC.swift */; };
 		4345F0E7296881F80062C5AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345F0E6296881F80062C5AA /* AppDelegate.swift */; };
 		4345F0E9296881F80062C5AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345F0E8296881F80062C5AA /* SceneDelegate.swift */; };
 		4345F0EB296881F80062C5AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345F0EA296881F80062C5AA /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43450A2B2968EDE700CF8D2D /* registerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerVC.swift; sourceTree = "<group>"; };
 		4345F0E3296881F80062C5AA /* Baskent DSC Admin Panel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baskent DSC Admin Panel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4345F0E6296881F80062C5AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4345F0E8296881F80062C5AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				4345F0E6296881F80062C5AA /* AppDelegate.swift */,
 				4345F0E8296881F80062C5AA /* SceneDelegate.swift */,
 				4345F0EA296881F80062C5AA /* ViewController.swift */,
+				43450A2B2968EDE700CF8D2D /* registerVC.swift */,
 				4345F0EC296881F80062C5AA /* Main.storyboard */,
 				4345F0F2296881F90062C5AA /* Assets.xcassets */,
 				4345F0F4296881F90062C5AA /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				4345F0EB296881F80062C5AA /* ViewController.swift in Sources */,
 				4345F0E7296881F80062C5AA /* AppDelegate.swift in Sources */,
 				4345F0E9296881F80062C5AA /* SceneDelegate.swift in Sources */,
+				43450A2C2968EDE700CF8D2D /* registerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +224,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +278,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -294,6 +298,8 @@
 				DEVELOPMENT_TEAM = 8RZ4FKZ3KA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Baskent DSC Admin Panel/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Baskent DSC Admin Panel";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -323,6 +329,8 @@
 				DEVELOPMENT_TEAM = 8RZ4FKZ3KA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Baskent DSC Admin Panel/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Baskent DSC Admin Panel";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

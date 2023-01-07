@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -57,7 +58,7 @@
                                     <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="cCv-PN-96l" kind="presentation" modalPresentationStyle="fullScreen" id="QVS-rX-l59"/>
+                                    <segue destination="9oN-1g-cLM" kind="presentation" modalPresentationStyle="fullScreen" id="UyH-4m-Dfu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your E-mail adress:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLa-JM-Cgx">
@@ -158,21 +159,109 @@
             </objects>
             <point key="canvasLocation" x="1142.7480916030534" y="-98.591549295774655"/>
         </scene>
-        <!--View Controller-->
+        <!--menu-->
         <scene sceneID="LMJ-F4-2JX">
             <objects>
-                <viewController id="cCv-PN-96l" sceneMemberID="viewController">
+                <viewController title="menu" id="cCv-PN-96l" customClass="menuVC" customModule="Baskent_DSC_Admin_Panel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4nn-Qn-rjw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dsQ-nR-Hgm">
+                                <rect key="frame" x="16" y="236" width="178" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.3803921938" green="0.79215681550000006" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.14901961389999999" green="0.14901961389999999" blue="0.14901961389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="list.bullet.clipboard.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2vc-Dp-1cq">
+                                <rect key="frame" x="16" y="416" width="178" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.3803921938" green="0.79215681550000006" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.14901961389999999" green="0.14901961389999999" blue="0.14901961389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chart.xyaxis.line" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PyC-Qo-2y1">
+                                <rect key="frame" x="199" y="416" width="178" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.3803921938" green="0.79215681550000006" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.14901961389999999" green="0.14901961389999999" blue="0.14901961389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.3.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XaC-Za-xWO">
+                                <rect key="frame" x="16" y="596" width="178" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.3803921938" green="0.79215681550000006" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.14901961389999999" green="0.14901961389999999" blue="0.14901961389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="questionmark.app.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Acj-qh-qA6">
+                                <rect key="frame" x="199" y="596" width="178" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.3803921938" green="0.79215681550000006" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.14901961389999999" green="0.14901961389999999" blue="0.14901961389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.3.sequence.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6sj-XT-RNe">
+                                <rect key="frame" x="199" y="236" width="178" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.3803921938" green="0.79215681550000006" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.14901961389999999" green="0.14901961389999999" blue="0.14901961389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="cBb-cl-lRI">
+                                <rect key="frame" x="104" y="103" width="184" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="v0X-8Q-ZOX"/>
                         <color key="backgroundColor" red="0.14835506679999999" green="0.14835506679999999" blue="0.14835506679999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zAV-h6-HRH"/>
+                    <navigationItem key="navigationItem" title="Menu" id="zAV-h6-HRH">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="CoX-e3-cYb">
+                            <imageReference key="image" image="power" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
+                                <hierarchicalColors>
+                                    <color systemColor="systemRedColor"/>
+                                    <color systemColor="secondaryLabelColor"/>
+                                    <color systemColor="tertiaryLabelColor"/>
+                                </hierarchicalColors>
+                            </imageReference>
+                        </barButtonItem>
+                        <button key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Y2a-e6-2if">
+                            <rect key="frame" x="137" y="5" width="119.33333333333331" height="34.333333333333336"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Admin Menu"/>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="yOH-pS-MWI">
+                            <color key="tintColor" red="0.3803921938" green="0.79215681550000006" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="adminsImg" destination="6sj-XT-RNe" id="WoZ-zh-ZN3"/>
+                        <outlet property="announcmentImg" destination="2vc-Dp-1cq" id="OCh-rP-MGc"/>
+                        <outlet property="boardMembersImg" destination="XaC-Za-xWO" id="HUk-LN-hAB"/>
+                        <outlet property="menuTitle" destination="Y2a-e6-2if" id="Qzy-93-0aZ"/>
+                        <outlet property="personalImg" destination="dsQ-nR-Hgm" id="b10-oz-8Ix"/>
+                        <outlet property="sssImg" destination="Acj-qh-qA6" id="Grd-Zr-Avc"/>
+                        <outlet property="statImg" destination="PyC-Qo-2y1" id="2pQ-E6-mkV"/>
+                        <segue destination="WVH-gW-qOT" kind="show" identifier="menutoPersonal" id="SUu-ga-18R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8d-Yj-zno" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1988.5496183206105" y="-99.295774647887328"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8Yr-8s-PAG">
+            <objects>
+                <viewController id="WVH-gW-qOT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="00J-PD-H2g">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7jm-zf-4O7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="seL-ZC-Xrn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chh-yO-2JB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2832" y="-96"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sgc-sH-HcZ">
@@ -328,13 +417,29 @@
             <point key="canvasLocation" x="1142.7480916030534" y="650.70422535211276"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="QVS-rX-l59"/>
-    </inferredMetricsTieBreakers>
     <resources>
+        <image name="chart.xyaxis.line" catalog="system" width="128" height="102"/>
+        <image name="list.bullet.clipboard.fill" catalog="system" width="103" height="128"/>
         <image name="logo-blue" width="200" height="100"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
+        <image name="person.3.sequence.fill" catalog="system" width="128" height="59"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="power" catalog="system" width="127" height="128"/>
+        <image name="questionmark.app.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

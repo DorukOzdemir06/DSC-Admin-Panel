@@ -29,56 +29,36 @@ class menuVC: UIViewController {
         
         personalImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(personalImgTapped)))
         adminsImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(adminsImgTapped)))
+        announcmentImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(announcmentImgTapped)))
         menuTitle.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 23)
         
-        //-----------
-        
-                   /*         let url = URL(string: "http://localhost:8888/api/v1/announcements/6388e9c654ef8970e09cd093")
-                            var request = URLRequest(url: url!)
-                            request.httpMethod = "PATCH"
-                            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                            var parameters: [String: String] = [
-                                "name": "data",
-                            ]
-                            parameters["name"] = "31"
-                            let body = try! JSONSerialization.data(withJSONObject: parameters, options: [])
-                            request.httpBody = body
-
-                            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                                if let error = error {
-                                    print(error)
-                                    return
-                                }
-                                guard let httpResponse = response as? HTTPURLResponse,
-                                      (200...299).contains(httpResponse.statusCode) else {
-                                    print("server error")
-                                    return
-                                }
-                                if let data = data {
-                                    let responseString = String(data: data, encoding: .utf8)
-                                    print(responseString)
-                                }
-                            }
-                            task.resume()
-        */
         
     }
     @objc func personalImgTapped() {
-        performSegue(withIdentifier: "menutoPersonal", sender: nil)
         personalImg.alpha = 0.5
+        performSegue(withIdentifier: "menutoPersonal", sender: nil)
         _ = Timer.scheduledTimer(withTimeInterval: 1/7, repeats: false) { _ in
             self.personalImg.alpha = 1
         }
        
     }
     @objc func adminsImgTapped() {
-        performSegue(withIdentifier: "menutoPersonal", sender: nil)
+       
         adminsImg.alpha = 0.5
         _ = Timer.scheduledTimer(withTimeInterval: 1/7, repeats: false) { _ in
             self.adminsImg.alpha = 1
         }
        
     }
-   
+    
+    @objc func announcmentImgTapped() {
+        
+        announcmentImg.alpha = 0.5
+        performSegue(withIdentifier: "menutoAnn", sender: nil)
+        _ = Timer.scheduledTimer(withTimeInterval: 1/7, repeats: false) { _ in
+            self.announcmentImg.alpha = 1
+        }
+       
+    }
 
 }

@@ -20,10 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         
-       
-        
-     
-                
+
         
         mailField.layer.cornerRadius = 6
         passwordField.layer.cornerRadius = 6
@@ -48,7 +45,7 @@ class ViewController: UIViewController {
    
     @IBAction func loginButtonPressed(_ sender: Any) {
         let url = URL(string: "http://localhost:8888/api/v1/users/login")
-        let session = URLSession.shared
+        
         
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
@@ -78,7 +75,7 @@ class ViewController: UIViewController {
             if let data = data {
                 let responseString = String(data: data, encoding: .utf8)
                 DispatchQueue.main.async {
-                    print(responseString)
+            
                     
                     self.performSegue(withIdentifier: "logintoMenu", sender: nil)
                 }

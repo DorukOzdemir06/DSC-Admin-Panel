@@ -15,6 +15,7 @@
 		4345F0F1296881F80062C5AA /* Baskent_DSC_Admin_Panel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4345F0EF296881F80062C5AA /* Baskent_DSC_Admin_Panel.xcdatamodeld */; };
 		4345F0F3296881F90062C5AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4345F0F2296881F90062C5AA /* Assets.xcassets */; };
 		4345F0F6296881F90062C5AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4345F0F4296881F90062C5AA /* LaunchScreen.storyboard */; };
+		434BEC2B296C8CB400FEAE9A /* annDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434BEC2A296C8CB400FEAE9A /* annDetailVC.swift */; };
 		43524F72296A0D5300B8B6DB /* announcementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43524F71296A0D5300B8B6DB /* announcementVC.swift */; };
 		43524F74296A0F2800B8B6DB /* announcementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43524F73296A0F2800B8B6DB /* announcementCell.swift */; };
 		4366DF12296973E100603B8E /* menuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4366DF11296973E100603B8E /* menuVC.swift */; };
@@ -32,6 +33,7 @@
 		4345F0F2296881F90062C5AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4345F0F5296881F90062C5AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4345F0F7296881F90062C5AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		434BEC2A296C8CB400FEAE9A /* annDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = annDetailVC.swift; sourceTree = "<group>"; };
 		43524F71296A0D5300B8B6DB /* announcementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = announcementVC.swift; sourceTree = "<group>"; };
 		43524F73296A0F2800B8B6DB /* announcementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = announcementCell.swift; sourceTree = "<group>"; };
 		4366DF11296973E100603B8E /* menuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuVC.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				4366DF1329699D7E00603B8E /* personalVC.swift */,
 				43524F71296A0D5300B8B6DB /* announcementVC.swift */,
 				43524F73296A0F2800B8B6DB /* announcementCell.swift */,
+				434BEC2A296C8CB400FEAE9A /* annDetailVC.swift */,
 				4345F0EC296881F80062C5AA /* Main.storyboard */,
 				4345F0F2296881F90062C5AA /* Assets.xcassets */,
 				4345F0F4296881F90062C5AA /* LaunchScreen.storyboard */,
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4366DF1429699D7E00603B8E /* personalVC.swift in Sources */,
+				434BEC2B296C8CB400FEAE9A /* annDetailVC.swift in Sources */,
 				4345F0F1296881F80062C5AA /* Baskent_DSC_Admin_Panel.xcdatamodeld in Sources */,
 				43524F74296A0F2800B8B6DB /* announcementCell.swift in Sources */,
 				4345F0EB296881F80062C5AA /* ViewController.swift in Sources */,

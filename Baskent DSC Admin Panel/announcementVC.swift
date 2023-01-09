@@ -7,119 +7,83 @@
 
 import UIKit
 
-struct annData: Decodable{
-    let data: [annData2]
-    let results: Int
-    let status: String
-    
-    
-}
-
-struct annData2: Decodable{
-    let data: [ann]
-}
-
-struct ann: Decodable{
-    let imageCover: String
-    let description: String
-    let name: String
-    let summary: String
-    let date: Date
-    let id: String
-    
-    
-    
-}
-
-struct Announcement: Codable {
-    let id: String
-    let name: String
-    let summary: String
-    let description: String
-    let date: Date
-    let imageCover: String
-}
-struct Response: Codable {
-    let data: [Announcement]
-}
-
-
-class announcementVC: UIViewController,UITableViewDataSource {
+class announcementVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var table: UITableView!
-    
-    
-    let url = URL(string: "http://localhost:8888/api/v1/announcements")
-    let session = URLSession.shared
-    
-    
+    var finalData: [[String: Any]] = []
+    var ready:Bool = false
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return finalData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = table.dequeueReusableCell(withIdentifier: "annCell", for: indexPath)
+        let cell = table.dequeueReusableCell(withIdentifier: "annCell", for: indexPath) as! announcementCell
         
+        cell.title.text = finalData[indexPath.row]["name"] as? String
+        cell.short.text = finalData[indexPath.row]["summary"] as? String
+        cell.imageMain.image =  UIImage(named: finalData[indexPath.row]["imageCover"] as! String)
         
         
         
         return cell
     }
     
-
-    
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "test123", sender: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         table.dataSource = self
-        
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        
-        if url != nil{
-            let task = session.dataTask(with: url!) { data, res, err in
-                if err != nil{
-                    print(err!.localizedDescription as String)
-                    
-                }
-                else{
-                    
-                    if data != nil{
-                        do{
-                            let jsonRes = try JSONSerialization.jsonObject(with: data!,options: JSONSerialization.ReadingOptions.mutableContainers)
-                            //let jsonRes2 = jsonRes["data"] as! Dictionary<String,Any>
-                            
-                            //let jsonRes3 = try JSONDecoder().decode(annData.self, from: jsonRes2 as! Data)
-                            
-                            //let response = try decoder.decode(Response.self, from: jsonRes2 as! Data)
-                                //let announcements = response.data
-                                //print(announcements)
-                            
-                            DispatchQueue.main.async {
-                                print(jsonRes)
-                            }
-
-                        }
-                        catch{
-                            print("could not load json object")
-                        }
-                    }
-                    else{
-                        print("data is empty")
-                    }
-                }
+        table.delegate = self
+        DispatchQueue.global().async {
+            self.fetchData()
+        }
+        while !self.ready {
+            if self.ready {
+                table.reloadData()
+                break
             }
-            task.resume()
         }
-        else{
-            print("url is null")
-        }
+
+        
     }
+
+
+
         
+    func fetchData() {
+        let url = URL(string: "http://localhost:8888/api/v1/announcements")!
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+          guard let data = data, error == nil else {
+            print(error?.localizedDescription ?? "No data")
+            return
+          }
+          let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+          if let responseJSON = responseJSON as? [String: Any] {
+            if let status = responseJSON["status"] as? String, status == "success" {
+              if let dataDict = responseJSON["data"] as? [String: Any],
+                 let dataArray = dataDict["data"] as? [[String: Any]] {
+                  self.finalData = dataArray
+                  self.ready = true
+              } else {
+                print("Error: Could not retrieve data from response")
+              }
+            } else {
+              print("Error: Invalid status in response")
+            }
+          } else {
+            print("Error: Could not parse response as JSON")
+          }
+        }
+        task.resume()
         
-        
-        
+      }
+
+
+    
+
+
     }
     
 

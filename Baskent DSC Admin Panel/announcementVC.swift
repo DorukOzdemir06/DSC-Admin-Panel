@@ -11,6 +11,7 @@ class announcementVC: UIViewController,UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var table: UITableView!
     var finalData: [[String: Any]] = []
     var ready:Bool = false
+    var selectedRow:Int?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return finalData.count
@@ -22,14 +23,25 @@ class announcementVC: UIViewController,UITableViewDelegate, UITableViewDataSourc
         cell.title.text = finalData[indexPath.row]["name"] as? String
         cell.short.text = finalData[indexPath.row]["summary"] as? String
         cell.imageMain.image =  UIImage(named: finalData[indexPath.row]["imageCover"] as! String)
-        
-        
-        
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "test123", sender: nil)
+        self.selectedRow = indexPath.row
+        self.performSegue(withIdentifier: "anntoAnnDetails", sender: nil)
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "anntoAnnDetails"{
+            let annDetailVC = segue.destination as! annDetailVC
+            annDetailVC.Titlee = finalData[self.selectedRow!]["name"] as? String
+            annDetailVC.Descp = finalData[self.selectedRow!]["description"] as? String
+            annDetailVC.Datee = finalData[self.selectedRow!]["date"] as? String
+        }
     }
     
     override func viewDidLoad() {
@@ -46,12 +58,9 @@ class announcementVC: UIViewController,UITableViewDelegate, UITableViewDataSourc
             }
         }
 
-        
     }
 
 
-
-        
     func fetchData() {
         let url = URL(string: "http://localhost:8888/api/v1/announcements")!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -80,8 +89,6 @@ class announcementVC: UIViewController,UITableViewDelegate, UITableViewDataSourc
         
       }
 
-
-    
 
 
     }

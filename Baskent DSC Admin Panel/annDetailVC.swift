@@ -9,21 +9,28 @@ import UIKit
 
 class annDetailVC: UIViewController {
 
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var descp: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var titlee: UILabel!
+    
+    var Datee:String!
+    var Descp:String!
+    var Image:String!
+    var Titlee:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        titlee.text = Titlee
+        date.text = Datee
+        descp.text = Descp
+        
+       
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
 
 }

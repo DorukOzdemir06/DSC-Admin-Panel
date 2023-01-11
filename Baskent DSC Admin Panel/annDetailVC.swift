@@ -24,7 +24,7 @@ class annDetailVC: UIViewController {
         titlee.text = Titlee
         date.text = Datee
         descp.text = Descp
-        
+        image.image = UIImage(named: Image)
        
         
     }
